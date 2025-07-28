@@ -200,7 +200,7 @@ else:
             distance_sort='descending',
             show_leaf_counts=True
         )
-        plt.title(f'Hierarchical Clustering Dendrogram (Bisecting Method)')
+        plt.title(f'Hierarchical Clustering Dendrogram (Spectural Clustering Split Method)')
         plt.xlabel('Cluster Index')
         plt.ylabel('Cluster Diameter at Split')
         plt.show()
