@@ -94,7 +94,7 @@ def split_cluster(cluster_to_split, paths):
 # 1. Setup
 N = 30
 P = 0.4
-random.seed(42)
+#random.seed(42)    # By commenting this out, the graph and as well as dendogram will be truly random on each run
 
 # Create weighted random graph
 adj_matrix = np.zeros((N, N))
