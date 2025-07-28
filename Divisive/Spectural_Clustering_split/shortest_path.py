@@ -73,6 +73,21 @@ def split_cluster(cluster_to_split, paths):
         return [cluster_to_split]
 
 
+def plot_graph(G , title="Graph Visualization"):
+    plt.figure(figsize=(12, 10))
+    pos = nx.spring_layout(G,seed=42)     # Use a spring layout with a fixed seed for reproducible plots
+    weights = [G[u][v].get('weight',1.0) for u , v in G.edges()]     # Check if edges have weights to visualize them by thickness
+    nx.draw(G , pos ,
+            with_labels = True,
+            node_color = 'skyblue',
+            node_size =  700,
+            edge_color = 'gray',
+            width = [w * 1.5 for w in weights]    # Make line width proportional to weight
+            )   
+    plt.title(title, fontsize=16)
+    plt.show()
+
+
 # --- Main Algorithm ---
 
 # 1. Setup
@@ -95,6 +110,8 @@ if not nx.is_connected(G):
 
 all_pairs_paths = dict(nx.shortest_path_length(G, weight='weight'))
 nodes = sorted(G.nodes())
+
+plot_graph(G, title=f"Initial Graph for Clustering (Nodes: {G.number_of_nodes()})")
 
 # 2. Start with one cluster containing all nodes
 clusters = [list(G.nodes())]
