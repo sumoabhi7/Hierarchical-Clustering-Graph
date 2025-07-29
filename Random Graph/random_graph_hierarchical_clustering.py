@@ -14,7 +14,7 @@ def plot_graph(G, title="Graph Visualization", node_colors=None, node_labels=Tru
     edge_widths = None
     if edge_weights and nx.get_edge_attributes(G, 'weight'):
         edge_widths = [G[u][v]['weight'] for u, v in G.edges()]
-        edge_widths = [w * 2 for w in edge_widths] # Make weighted edges more visible
+        edge_widths = [w * 2 for w in edge_widths] 
 
     nx.draw_networkx_nodes(G, pos, node_color=node_colors if node_colors else 'skyblue',
                            node_size=600, alpha=0.9, linewidths=1, edgecolors='black')
@@ -24,7 +24,7 @@ def plot_graph(G, title="Graph Visualization", node_colors=None, node_labels=Tru
         nx.draw_networkx_labels(G, pos, font_size=8, font_color='black')
     
     plt.title(title, fontsize=16)
-    plt.axis('off') # Turn off axis
+    plt.axis('off') 
     plt.show()
 
 def generate_random_graph_and_cluster_interactive():
@@ -130,7 +130,7 @@ def generate_random_graph_and_cluster_interactive():
     plt.ylabel('Distance')
     dendrogram(
         Z,
-        labels=np.arange(num_nodes), # Using numerical indices from 0 to num_nodes-1
+        labels=np.arange(num_nodes),
         leaf_rotation=90.,
         leaf_font_size=8.,
         show_contracted=True
