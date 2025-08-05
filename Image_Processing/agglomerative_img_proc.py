@@ -7,7 +7,7 @@ from scipy.cluster.hierarchy import dendrogram, linkage
 # -----------------------
 # Step 1: Load and preprocess image
 # -----------------------
-image_path = r"dummy_img.png"  # Change to your image path
+image_path = r"blackhole.jpg"  # Change to your image path
 img = Image.open(image_path).convert('RGB').resize((200, 200))
 img_array = np.array(img)  # Shape: (200, 200, 3)
 pixels = img_array.reshape(-1, 3)  # Shape: (40000, 3)
@@ -34,7 +34,7 @@ plt.show()
 # -----------------------
 # Step 3: Apply hierarchical clustering
 # -----------------------
-n_clusters = 5  # Change as needed
+n_clusters = 9  # Change as needed
 clustering = AgglomerativeClustering(n_clusters=n_clusters, linkage='ward')
 labels = clustering.fit_predict(pixels)
 
