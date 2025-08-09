@@ -81,5 +81,4 @@ plt.subplot(1, 2, 2)
 plt.imshow(segmented_img.astype(np.uint8))
 plt.title(f"Clustered Image ({n_clusters} Clusters)")
 plt.axis("off")
-
 plt.show()
