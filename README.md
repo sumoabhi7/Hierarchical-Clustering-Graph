@@ -237,8 +237,36 @@ Handling Large Datasets in Hierarchical Clustering
         Memory constraints prevent storing the full distance matrix.
 
 
-
-
+ALL CODE EXPLANATION 
+1.AGGLOMATIVE 
+    A.COMPLETE LINKAGE (EUCLIDEAN DISTANCE)
+        Libraries Used
+            numpy: To store and handle numerical data.
+            scipy.cluster.hierarchy: For hierarchical clustering functions (linkage, dendrogram, fcluster).
+            matplotlib.pyplot: For plotting dendrograms and scatter plots.
+        Dataset Creation
+            Created a numpy array X with 6 two-dimensional points.
+            Points P1–P3 form one close group, and P4–P6 form another.
+        Perform Clustering
+            Used linkage(X, method='complete', metric='euclidean').
+            Complete linkage: Distance between two clusters = maximum pairwise distance between points in those clusters.
+            Euclidean metric: Straight-line distance.
+        Plot Dendrogram
+            Used dendrogram() to visualize the hierarchical merging of points/clusters.
+            Labels assigned as P1 to P6.
+            Y-axis shows merge distance.
+        Form Flat Clusters
+            Used fcluster(Z, t=2, criterion='maxclust') to cut the dendrogram into 2 clusters.
+            Returns cluster assignments (e.g., [1 1 1 2 2 2]).
+        Visualize Clusters on Original Data
+            Used plt.scatter() to plot the original data points.
+            Colored points by cluster ID (c=clusters, cmap='viridis').
+            Added point labels (P1 to P6).
+            Added grid and color bar for clarity.
+        Result
+            Dendrogram: Shows hierarchical relationships between points.
+            Scatter Plot: Shows original data points colored by their cluster.
+    B. SINGLE LINKAGE (EUCLIDEAN DISTANCE)
 
 
 
