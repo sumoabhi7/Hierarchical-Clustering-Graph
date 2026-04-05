@@ -2,6 +2,7 @@
 __pycache__/
 *.py[codz]
 *$py.class
+*.pyc
 
 # C extensions
 *.so
@@ -205,3 +206,14 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+#database image folders
+fingerprints/
+fingerprints_rotated/
+fingerprints_scaled/
+
+#images
+*.tif
+*.png 
+*.jpg
+*.jpeg
